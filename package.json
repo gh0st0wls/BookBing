@@ -8,7 +8,9 @@
     "start:dev": "concurrently \"cd server && npm run watch\" \"wait-on tcp:3001 && cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
-    "render-build": "npm install && npm run build"
+    "render-build": "npm install && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +18,11 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "concurrently": "^8.2.0",
+    "gh-pages": "^6.3.0",
     "wait-on": "^7.2.0"
   },
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "homepage": "http://gh0st0wls.github.io/BookBing"
 }
